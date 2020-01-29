@@ -1,0 +1,42 @@
+{
+	"name": "todo-app-without-db",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.tsx",
+	"scripts": {
+		"start": "parcel src/index.html",
+		"build": "parcel build src/index.html",
+		"test": "jest"
+	},
+	"author": "Dawid Dahl",
+	"license": "ISC",
+	"dependencies": {
+		"parcel-bundler": "^1.12.4",
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
+		"react-redux": "^7.1.3",
+		"redux-devtools-extension": "^2.13.8"
+	},
+	"devDependencies": {
+		"@types/core-js": "^2.5.2",
+		"@types/jest": "^24.9.1",
+		"@types/node": "^13.5.0",
+		"@types/react": "^16.9.19",
+		"@types/react-dom": "^16.9.5",
+		"@types/react-redux": "^7.1.7",
+		"jest": "^25.1.0",
+		"ts-jest": "^25.0.0",
+		"typescript": "^3.7.5"
+	},
+	"jest": {
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js"
+		],
+		"transform": {
+			"\\.(ts|tsx)$": "ts-jest"
+		},
+		"testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
+	}
+}
