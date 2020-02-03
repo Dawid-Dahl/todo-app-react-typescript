@@ -8,10 +8,11 @@ import {RootState} from "./store";
 
 const App: React.FC = () => {
 	const isAddingTodo = useSelector((state: RootState) => state.reducer.isAddingTodo);
+	const isEditingTodo = useSelector((state: RootState) => state.reducer.isEditingTodo);
 
 	return (
 		<div className="app">
-			{isAddingTodo ? <Graybox /> : ""}
+			{isAddingTodo || isEditingTodo ? <Graybox /> : ""}
 			<Header />
 			<TodoList />
 			<AddInput />

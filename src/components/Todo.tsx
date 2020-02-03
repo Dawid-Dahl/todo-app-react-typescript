@@ -13,12 +13,19 @@ const Todo: React.FC<Props> = ({todo}) => {
 	const dispatch = useDispatch();
 	const h1ClassName = todo.done ? "todo__h1--active" : "todo__h1--inactive";
 
+	const editTodo = (e: any) => {
+		dispatch(actionCreator("TOGGLE_IS_EDITING_TODO"));
+		dispatch(actionCreator("UPDATE_CURRENTLY_UPDATING_ID", e.target.dataset.id));
+	};
+
 	return (
 		<div className="todo">
 			<div className="todo__todo_wrapper">
 				<TodoToggleButton todo={todo} />
 				<div className="todo__h1-text-wrapper">
-					<h2 className={h1ClassName}>{todo.content}</h2>
+					<h2 className={h1ClassName} data-id={todo.timestamp} onClick={editTodo}>
+						{todo.content}
+					</h2>
 					<p className="todo__timestamp">
 						Created at: {new Date(todo.timestamp).toLocaleString()}
 					</p>

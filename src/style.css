@@ -264,6 +264,7 @@ html {
 	padding: 3px;
 	cursor: text;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 .todo__h1--active {
@@ -272,6 +273,7 @@ html {
 	cursor: text;
 	text-decoration: line-through;
 	color: var(--grey);
+	cursor: pointer;
 }
 
 .todo__timestamp {

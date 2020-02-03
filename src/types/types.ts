@@ -12,5 +12,7 @@ export interface IAction {
 export interface IReducerState {
 	todos: Array<ITodo>;
 	isAddingTodo: boolean;
+	isEditingTodo: boolean;
+	idOfCurrentlyUpdatingTodo: number | null;
 	addTodoTextInput: string;
 }
