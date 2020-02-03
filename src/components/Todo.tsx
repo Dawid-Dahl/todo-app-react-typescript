@@ -11,14 +11,17 @@ interface Props {
 
 const Todo: React.FC<Props> = ({todo}) => {
 	const dispatch = useDispatch();
+	const h1ClassName = todo.done ? "todo__h1--active" : "todo__h1--inactive";
 
 	return (
 		<div className="todo">
 			<div className="todo__todo_wrapper">
 				<TodoToggleButton todo={todo} />
 				<div className="todo__h1-text-wrapper">
-					<h2 className="todo__h1">{todo.content}</h2>
-					<p className="todo__timestamp">Created at: {todo.timestamp}</p>
+					<h2 className={h1ClassName}>{todo.content}</h2>
+					<p className="todo__timestamp">
+						Created at: {new Date(todo.timestamp).toLocaleString()}
+					</p>
 				</div>
 			</div>
 			<svg
