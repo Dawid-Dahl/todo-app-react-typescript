@@ -8,7 +8,7 @@ const INITIAL_STATE: IReducerState = {
 	addTodoTextInput: ""
 };
 
-export const reducer = (state = INITIAL_STATE, action: IAction) => {
+export const todoReducer = (state = INITIAL_STATE, action: IAction) => {
 	switch (action.type) {
 		case "TOGGLE_IS_ADDING_TODO":
 			return {...state, isAddingTodo: !state.isAddingTodo};

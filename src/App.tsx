@@ -7,8 +7,8 @@ import {useSelector} from "react-redux";
 import {RootState} from "./store";
 
 const App: React.FC = () => {
-	const isAddingTodo = useSelector((state: RootState) => state.reducer.isAddingTodo);
-	const isEditingTodo = useSelector((state: RootState) => state.reducer.isEditingTodo);
+	const isAddingTodo = useSelector((state: RootState) => state.todoReducer.isAddingTodo);
+	const isEditingTodo = useSelector((state: RootState) => state.todoReducer.isEditingTodo);
 
 	return (
 		<div className="app">

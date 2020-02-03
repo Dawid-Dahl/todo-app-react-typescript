@@ -1,8 +1,8 @@
 import {createStore, combineReducers} from "redux";
-import {reducer} from "../reducers";
+import {todoReducer} from "../reducers";
 import {composeWithDevTools} from "redux-devtools-extension";
 
-const rootReducer = combineReducers({reducer});
+const rootReducer = combineReducers({todoReducer});
 
 export type RootState = ReturnType<typeof rootReducer>;
 

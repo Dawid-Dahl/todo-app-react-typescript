@@ -6,9 +6,9 @@ import {RootState} from "../../store";
 
 export const EditTodoMenu = () => {
 	const dispatch = useDispatch();
-	const textInput = useSelector((state: RootState) => state.reducer.addTodoTextInput);
+	const textInput = useSelector((state: RootState) => state.todoReducer.addTodoTextInput);
 	const idOfCurrentlyUpdatingTodo = useSelector(
-		(state: RootState) => state.reducer.idOfCurrentlyUpdatingTodo
+		(state: RootState) => state.todoReducer.idOfCurrentlyUpdatingTodo
 	);
 
 	const editTodo = (e: any) => {

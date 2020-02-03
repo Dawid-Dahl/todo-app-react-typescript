@@ -5,6 +5,6 @@ import {RootState} from "../../store";
 import {EditTodoMenu} from "./EditTodoMenu";
 
 export const Graybox = () => {
-	const isEditingTodo = useSelector((state: RootState) => state.reducer.isEditingTodo);
+	const isEditingTodo = useSelector((state: RootState) => state.todoReducer.isEditingTodo);
 	return <div className="graybox">{isEditingTodo ? <EditTodoMenu /> : <AddTodoMenu />}</div>;
 };

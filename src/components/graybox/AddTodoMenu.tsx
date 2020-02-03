@@ -6,7 +6,7 @@ import {RootState} from "../../store";
 
 export const AddTodoMenu = () => {
 	const dispatch = useDispatch();
-	const textInput = useSelector((state: RootState) => state.reducer.addTodoTextInput);
+	const textInput = useSelector((state: RootState) => state.todoReducer.addTodoTextInput);
 
 	const addTodo = (e: any) => {
 		if (!textInput) return;
