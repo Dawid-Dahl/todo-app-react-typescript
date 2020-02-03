@@ -37,6 +37,7 @@ export const AddTodoMenu = () => {
 					placeholder="Type here..."
 					onChange={e => dispatch(actionCreator("ADD_TEXT_INPUT", e.target.value))}
 					onSubmit={addTodo}
+					autoFocus
 				/>
 				<Button title="Add" action={addTodo} buttonType="submit" />
 			</form>
