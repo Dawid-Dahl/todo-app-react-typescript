@@ -1,16 +1,17 @@
-import React from "react";
+import React, {DetailedHTMLProps, ButtonHTMLAttributes} from "react";
 
 interface Props {
 	title: string;
+	buttonType: any;
 	action: (e: any) => void;
 }
 
-export const Button: React.FC<Props> = ({title, action}) => {
+export const Button: React.FC<Props> = ({title, action, buttonType}) => {
 	return (
 		<>
-			<a className="button" href="#" onClick={action}>
+			<button className="button" type={buttonType} onClick={action}>
 				{title}
-			</a>
+			</button>
 		</>
 	);
 };

@@ -9,8 +9,10 @@ export const AddTodoMenu = () => {
 	const textInput = useSelector((state: RootState) => state.reducer.addTodoTextInput);
 
 	const addTodo = (e: any) => {
+		if (!textInput) return;
 		e.preventDefault();
 		dispatch(actionCreator("ADD_TODO", todoFactory(false, textInput, new Date().getTime())));
+		dispatch(actionCreator("ADD_TEXT_INPUT", ""));
 		dispatch(actionCreator("TOGGLE_IS_ADDING_TODO"));
 	};
 
@@ -28,13 +30,16 @@ export const AddTodoMenu = () => {
 				></path>
 			</svg>
 			<h1 className="add-todo-menu__h1">What would you like to add?</h1>
-			<input
-				className="add-todo-menu__text-area"
-				type="textarea"
-				placeholder="Type here..."
-				onChange={e => dispatch(actionCreator("ADD_TEXT_INPUT", e.target.value))}
-			/>
-			<Button title="Add" action={addTodo} />
+			<form className="add-todo-menu__form">
+				<input
+					className="add-todo-menu__text-area"
+					type="textarea"
+					placeholder="Type here..."
+					onChange={e => dispatch(actionCreator("ADD_TEXT_INPUT", e.target.value))}
+					onSubmit={addTodo}
+				/>
+				<Button title="Add" action={addTodo} buttonType="submit" />
+			</form>
 		</div>
 	);
 };
