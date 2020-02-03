@@ -1,12 +1,18 @@
 import React from "react";
+import {ITodo} from "../types/types";
 
-const Todo = () => (
+interface Props {
+	key: number;
+	todo: ITodo;
+}
+
+const Todo: React.FC<Props> = ({todo}) => (
 	<div className="todo">
 		<div className="todo__todo_wrapper">
 			<div className="todo__done-marker"></div>
 			<div className="todo__h1-text-wrapper">
-				<h2 className="todo__h1">The Text About Todos</h2>
-				<p className="todo__timestamp">Created at: 86586576</p>
+				<h2 className="todo__h1">{todo.content}</h2>
+				<p className="todo__timestamp">Created at: {todo.timestamp}</p>
 			</div>
 		</div>
 		<svg className="todo__remove-todo" viewBox="0 0 24 24">

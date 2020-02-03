@@ -1,10 +1,19 @@
 import React from "react";
 import {Button} from "../Button";
-import {useDispatch} from "react-redux";
-import {actionCreator} from "../../utils/utils";
+import {useDispatch, useSelector} from "react-redux";
+import {actionCreator, todoFactory} from "../../utils/utils";
+import {RootState} from "../../store";
 
 export const AddTodoMenu = () => {
 	const dispatch = useDispatch();
+	const textInput = useSelector((state: RootState) => state.reducer.addTodoTextInput);
+
+	const addTodo = (e: any) => {
+		e.preventDefault();
+		dispatch(actionCreator("ADD_TODO", todoFactory(false, textInput, new Date().getTime())));
+		dispatch(actionCreator("TOGGLE_IS_ADDING_TODO"));
+	};
+
 	return (
 		<div className="add-todo-menu">
 			<svg
@@ -25,7 +34,7 @@ export const AddTodoMenu = () => {
 				placeholder="Type here..."
 				onChange={e => dispatch(actionCreator("ADD_TEXT_INPUT", e.target.value))}
 			/>
-			<Button />
+			<Button title="Add" action={addTodo} />
 		</div>
 	);
 };

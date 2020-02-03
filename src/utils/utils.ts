@@ -1,23 +1,14 @@
-interface Todo {
-	done: boolean;
-	content: string;
-	timestamp: number;
-}
+import {ITodo, IAction} from "../types/types";
 
-interface ActionObject {
-	type: string;
-	payload: any;
-}
-
-const todoFactory = (done = false, content = "", timestamp: number): Todo => ({
+const todoFactory = (done = false, content = "", timestamp: number): ITodo => ({
 	done,
 	content,
 	timestamp
 });
 
-const actionCreator = (type: string, payload: any = undefined): ActionObject => ({
+const actionCreator = (type: string, payload: any = undefined): IAction => ({
 	type,
 	payload
 });
 
-export {Todo, todoFactory, actionCreator};
+export {todoFactory, actionCreator};

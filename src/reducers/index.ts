@@ -1,23 +1,12 @@
-import {Todo} from "../utils/utils";
+import {IAction, IReducerState} from "../types/types";
 
-interface Action {
-	type: string;
-	payload: any;
-}
-
-interface ReducerState {
-	todos: Array<Todo>;
-	isAddingTodo: boolean;
-	addTodoTextInput: string;
-}
-
-const INITIAL_STATE: ReducerState = {
+const INITIAL_STATE: IReducerState = {
 	todos: [],
 	isAddingTodo: false,
 	addTodoTextInput: ""
 };
 
-export const reducer = (state = INITIAL_STATE, action: Action) => {
+export const reducer = (state = INITIAL_STATE, action: IAction) => {
 	switch (action.type) {
 		case "TOGGLE_IS_ADDING_TODO":
 			return {...state, isAddingTodo: !state.isAddingTodo};
