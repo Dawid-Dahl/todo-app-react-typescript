@@ -3,6 +3,7 @@ import {Button} from "../Button";
 import {useDispatch, useSelector} from "react-redux";
 import {actionCreator, todoFactory} from "../../utils/utils";
 import {RootState} from "../../store";
+import {AddTodoForm} from "./AddTodoForm";
 
 export const AddTodoMenu = () => {
 	const dispatch = useDispatch();
@@ -30,17 +31,7 @@ export const AddTodoMenu = () => {
 				></path>
 			</svg>
 			<h1 className="add-todo-menu__h1">What would you like to add?</h1>
-			<form className="add-todo-menu__form">
-				<input
-					className="add-todo-menu__text-area"
-					type="textarea"
-					placeholder="Type here..."
-					onChange={e => dispatch(actionCreator("ADD_TEXT_INPUT", e.target.value))}
-					onSubmit={addTodo}
-					autoFocus
-				/>
-				<Button title="Add" action={addTodo} buttonType="submit" />
-			</form>
+			<AddTodoForm />
 		</div>
 	);
 };
