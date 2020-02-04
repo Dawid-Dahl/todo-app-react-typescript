@@ -15,7 +15,8 @@ const Todo: React.FC<Props> = ({todo}) => {
 
 	const editTodo = (e: any) => {
 		dispatch(actionCreator("TOGGLE_IS_EDITING_TODO"));
-		dispatch(actionCreator("UPDATE_CURRENTLY_UPDATING_ID", e.target.dataset.id));
+		dispatch(actionCreator("UPDATE_CURRENTLY_UPDATING_ID", parseInt(e.target.dataset.id)));
+		dispatch(actionCreator("ADD_TEXT_INPUT", todo.content));
 	};
 
 	return (
